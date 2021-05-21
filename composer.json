@@ -22,5 +22,8 @@
   },
   "config": {
     "optimize-autoloader": true
+  },
+  "extra": {
+    "installer-name": "uniform-hcaptcha"
   }
 }
