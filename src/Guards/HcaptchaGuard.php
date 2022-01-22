@@ -2,9 +2,7 @@
 
 namespace Uniform\Guards;
 
-use ErrorException;
 use Kirby\Http\Remote;
-use Kirby\Http\Request;
 use Uniform\Exceptions\Exception;
 
 class HcaptchaGuard extends Guard
