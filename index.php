@@ -4,11 +4,10 @@ use Kirby\Cms\App as Kirby;
 
 @include_once __DIR__.'/vendor/autoload.php';
 
-Kirby::plugin('leitsch/uniform-hcaptcha', [
+Kirby::plugin('anselmh/uniform-turnstile', [
   'options' => [
     'siteKey' => '',
-    'secretKey' => '',
-    'size' => 'normal',
+    'secretKey' => ''
   ],
   'translations' => [
     'en' => @include_once __DIR__.'/i18n/en.php',

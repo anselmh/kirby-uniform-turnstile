@@ -1,6 +1,6 @@
-# Uniform hCaptcha Guard
+# Uniform Clouflare Turnstile Guard
 
-A [Kirby 3](https://getkirby.com/) plugin implementing a [hCaptcha](https://www.hcaptcha.com/) guard for the [Uniform](https://github.com/mzur/kirby-uniform) plugin.
+A [Kirby 3](https://getkirby.com/) plugin implementing a [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) guard for the [Uniform](https://github.com/mzur/kirby-uniform) plugin.
 
 ## Installation
 
@@ -9,7 +9,7 @@ A [Kirby 3](https://getkirby.com/) plugin implementing a [hCaptcha](https://www.
 Add the plugin to your project:
 
 ```
-composer require leitsch/kirby-uniform-hcaptcha
+composer require anselmh/kirby-uniform-turnstile
 ```
 
 ## Configuration
@@ -18,8 +18,8 @@ Set the configuration in your `config.php` file:
 
 ```php
 return [
-  'leitsch.uniform-hcaptcha.siteKey' => 'my-site-key',
-  'leitsch.uniform-hcaptcha.secretKey' => 'my-secret-key',
+  'anselmh.uniform-turnstile.siteKey' => 'my-site-key',
+  'anselmh.uniform-turnstile.secretKey' => 'my-secret-key',
 ];
 ```
 
@@ -27,15 +27,15 @@ return [
 
 ### Template
 
-You can use the provided helper function to embed the hCaptcha into your template:
+You can use the provided helper function to embed the Turnstile into your template:
 
 ```html+php
-<?= hcaptchaField() ?>
+<?= turnstileField() ?>
 ```
 
-In order for hCaptcha to work, you need to provide the hCaptcha JavaScript file.
+In order for turnstile to work, you need to provide the Turnstile JavaScript file.
 
-Use the helper function `hcaptchaScript()` in your template.
+Use the helper function `turnstileScript()` in your template or add it to the template at right before the closing `</body>` tag.
 
 **Example**
 
@@ -47,22 +47,22 @@ Use the helper function `hcaptchaScript()` in your template.
     <!-- ... -->
 
     <?= csrf_field() ?>
-    <?= hcaptchaField() ?>
+    <?= turnstileField() ?>
     <input type="submit" value="Submit">
 </form>
-<?= hcaptchaScript() ?>
+<?= turnstileScript() ?>
 ```
 
 ### Controller
 
-In your controller you can use the [magic method](https://kirby-uniform.readthedocs.io/en/latest/guards/guards/#magic-methods) `hcaptchaGuard()` to enable the hCaptcha guard:
+In your controller you can use the [magic method](https://kirby-uniform.readthedocs.io/en/latest/guards/guards/#magic-methods) `turnstileGuard()` to enable the turnstile guard:
 
 ```php
 $form = new Form(/* ... */);
 
 if ($kirby->request()->is('POST'))
 {
-    $form->hcaptchaGuard()
+    $form->turnstileGuard()
          ->emailAction(/* ... */);
 }
 ```
@@ -70,3 +70,4 @@ if ($kirby->request()->is('POST'))
 ## Credits
 
 - Thanks to Lukas Dürrenberger for the [Uniform reCAPTCHA Guard Plugin](https://github.com/eXpl0it3r/kirby-uniform-recaptcha)
+- Thanks to Lukas Leitsch for the [Uniform hCaptcha Guard Plugin](https://github.com/lukasleitsch/kirby-uniform-hcaptcha)

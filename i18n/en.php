@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'uniform-hcaptcha-empty' => 'The hCaptcha value is empty.',
-    'uniform-hcaptcha-invalid' => 'The hCaptcha value is invalid.'
+    'uniform-turnstile-empty' => 'The Cloudflare Turnstile challenge was not solved.',
+    'uniform-turnstile-invalid' => 'The Cloudflare Turnstile challenge response is invalid.'
 ];

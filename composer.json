@@ -1,16 +1,16 @@
 {
-  "name": "leitsch/kirby-uniform-hcaptcha",
-  "description": "Kirby 3 hCaptcha guard for the Uniform plugin",
+  "name": "anselmh/kirby-uniform-turnstile",
+  "description": "Kirby 3 Cloudflare Turnstile guard for the Uniform plugin",
   "type": "kirby-plugin",
   "require": {
     "php": "^8.0",
-    "getkirby/composer-installer": "^1.1",
+    "getkirby/composer-installer": "^1.2",
     "mzur/kirby-uniform": "^5.0"
   },
   "license": "MIT",
   "authors": [{
-    "name": "Lukas Leitsch",
-    "email": "lukas@leitsch.org"
+    "name": "Anselm Hannemann ",
+    "email": "info@anselm-hannemann.com"
   }],
   "autoload": {
     "psr-4": {
@@ -24,6 +24,6 @@
     "optimize-autoloader": true
   },
   "extra": {
-    "installer-name": "uniform-hcaptcha"
+    "installer-name": "uniform-turnstile"
   }
 }
