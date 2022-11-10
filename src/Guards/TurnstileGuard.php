@@ -12,7 +12,7 @@ class TurnstileGuard extends Guard
      *
      * @var string
      */
-    const fieldName = 'turnstile-response';
+    const fieldName = 'cf-turnstile-response';
 
     /**
      * URL for the Turnstile verification
