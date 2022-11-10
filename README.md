@@ -1,4 +1,4 @@
-# Uniform Clouflare Turnstile Guard
+# Uniform Cloudflare Turnstile Guard
 
 A [Kirby 3](https://getkirby.com/) plugin implementing a [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/) guard for the [Uniform](https://github.com/mzur/kirby-uniform) plugin.
 
