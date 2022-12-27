@@ -4,6 +4,9 @@ use Kirby\Cms\App as Kirby;
 
 @include_once __DIR__.'/vendor/autoload.php';
 
+@include_once __DIR__.'/src/Guards/TurnstileGuard.php';
+@include_once __DIR__.'/src/helpers.php';
+
 Kirby::plugin('anselmh/uniform-turnstile', [
   'options' => [
     'siteKey' => '',
