@@ -12,6 +12,11 @@ Add the plugin to your project:
 composer require anselmh/kirby-uniform-turnstile
 ```
 
+### Manual install
+
+It is possible to install plugins manually. Download from the Github Releases page, unpack the archive and put it into `site/plugins`.
+Please note that this project depends on [Uniform](https://github.com/mzur/kirby-uniform) so it is required to install this package as well.
+
 ## Configuration
 
 Set the configuration in your `config.php` file:
