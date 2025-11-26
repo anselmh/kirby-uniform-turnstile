@@ -25,6 +25,7 @@ Set the configuration in your `config.php` file:
 return [
   'anselmh.uniform-turnstile.siteKey' => 'my-site-key',
   'anselmh.uniform-turnstile.secretKey' => 'my-secret-key',
+  'anselmh.uniform-turnstile.theme' => 'auto(default)|light|dark',
 ];
 ```
 

@@ -10,7 +10,8 @@ use Kirby\Cms\App as Kirby;
 Kirby::plugin('anselmh/uniform-turnstile', [
   'options' => [
     'siteKey' => '',
-    'secretKey' => ''
+    'secretKey' => '',
+    'theme' => ''
   ],
   'translations' => [
     'en' => @include_once __DIR__.'/i18n/en.php',
