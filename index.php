@@ -2,19 +2,30 @@
 
 use Kirby\Cms\App as Kirby;
 
-@include_once __DIR__.'/vendor/autoload.php';
+if (is_file(__DIR__.'/vendor/autoload.php')) {
+  require_once __DIR__.'/vendor/autoload.php';
+}
 
-@include_once __DIR__.'/src/Guards/TurnstileGuard.php';
-@include_once __DIR__.'/src/helpers.php';
+// Load the guard lazily: it extends a Uniform class, which may not be loaded
+// yet depending on the plugin folder name (plugins load alphabetically).
+spl_autoload_register(function (string $class) {
+  if ($class === 'Uniform\\Guards\\TurnstileGuard') {
+    require_once __DIR__.'/src/Guards/TurnstileGuard.php';
+  }
+});
+
+require_once __DIR__.'/src/helpers.php';
 
 Kirby::plugin('anselmh/uniform-turnstile', [
   'options' => [
     'siteKey' => '',
     'secretKey' => '',
-    'theme' => ''
+    'theme' => 'auto',
+    'timeout' => 10,
   ],
   'translations' => [
-    'en' => @include_once __DIR__.'/i18n/en.php',
-    'de' => @include_once __DIR__.'/i18n/de.php',
+    'en' => require __DIR__.'/i18n/en.php',
+    'de' => require __DIR__.'/i18n/de.php',
+    'fr' => require __DIR__.'/i18n/fr.php',
   ],
 ]);
