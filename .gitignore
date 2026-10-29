@@ -1,1 +1,7 @@
 .idea/
+vendor/
+.DS_Store
+kirby/
+site/
+.phpunit.cache/
+.phpunit.result.cache
